@@ -1,0 +1,11 @@
+# Secret config, you will need to make this file yourself. See secret.env.example
+secret.env
+
+# My Text Editor stuff
+.vscode/
+
+# Python stuff
+__pycache__/
+
+# Logs
+logs/
