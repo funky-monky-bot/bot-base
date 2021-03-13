@@ -29,7 +29,7 @@ class ErrorCog(commands.Cog, name="Error Handling"):
             additional_error_text = (
                 f"Exception Raised!\n"
                 f"Command: {ctx.command.qualified_name}\n"
-                f"Exception Text: {exc.original}\n"
+                f"Exception Text: {exc.original.__class__.__name__}: {exc.original}\n"
                 f"Raised by user: `{ctx.author}`    `{ctx.author.id}`\n"
                 f"Timestamp: {datetime.now().isoformat()}\n"
                 f""
@@ -72,7 +72,8 @@ class ErrorCog(commands.Cog, name="Error Handling"):
                 )
 
             logging.error(
-                f"Exception raised in command {ctx.command.qualified_name}: {exc.original}. "
+                f"Exception raised in command {ctx.command.qualified_name}: "
+                f"{exc.original.__class__.__name__}: {exc.original}. "
                 "See error channel for full traceback"
             )
             return
