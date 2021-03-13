@@ -60,7 +60,7 @@ class ErrorCog(commands.Cog, name="Error Handling"):
                 )
 
             logging.error(
-                f"Exception raised in command {ctx.command.qualified_name}: {exc}. "
+                f"Exception raised in command {ctx.command.qualified_name}: {exc.original}. "
                 "See error channel for full traceback"
             )
             return
