@@ -2,11 +2,13 @@ import logging
 import os
 from os import getenv
 from dotenv import dotenv_values
+from typing import Optional
 
 import discord
 from discord.ext import commands
 
 from bot import Bot
+from utils import MentionConverter
 
 
 class DevCog(commands.Cog, name="Developer Tools"):
@@ -38,6 +40,27 @@ class DevCog(commands.Cog, name="Developer Tools"):
         the error handler
         """
         raise Exception("Broken command run")
+
+    @commands.command()
+    async def say(
+        self, ctx: commands.Context, mention: Optional[MentionConverter], *, text: str
+    ):
+        """
+        Repeats the passed-in text, which is everything after the command name and
+        optional mention
+
+        TODO: Add explanation of mention processing logic somewhere end-users can view
+        it (not prioritised as currently only used by this dev-only command)
+        """
+        if mention is not None:
+            text = f"{mention} {text}"
+
+        try:
+            await ctx.message.delete()
+        except discord.Forbidden:
+            pass
+
+        await ctx.send(text)
 
 
 def setup(bot: Bot) -> None:
