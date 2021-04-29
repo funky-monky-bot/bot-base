@@ -58,7 +58,7 @@ if __name__ == "__main__":
         logging.debug("KeyboardInterrupt")  # Probably raised by Ctrl+C at terminal
     finally:
         logging.debug("Logging out from discord")
-        loop.run_until_complete(bot.logout())
+        loop.run_until_complete(bot.close())
         logging.info("Logged out from discord")
     logging.debug("Shutting down asynchronous generators to close loop")
     loop.run_until_complete(loop.shutdown_asyncgens())
