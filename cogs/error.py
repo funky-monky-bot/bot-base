@@ -32,7 +32,6 @@ class ErrorCog(commands.Cog, name="Error Handling"):
                 f"Exception Text: {exc.original.__class__.__name__}: {exc.original}\n"
                 f"Raised by user: `{ctx.author}`    `{ctx.author.id}`\n"
                 f"Timestamp: {datetime.now().isoformat()}\n"
-                f""
             )
 
             # Generate paginated exception with traceback
