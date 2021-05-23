@@ -31,17 +31,17 @@ class MentionConverter(commands.Converter):
             converter = commands.RoleConverter()
             role = await converter.convert(ctx, argument)
             return role.mention
-        except (commands.NoPrivateMessage, BadArgument):
+        except (commands.NoPrivateMessage, commands.BadArgument):
             pass
 
         try:
             converter = commands.MemberConverter()
             user = await converter.convert(ctx, argument)
             return user.mention
-        except BadArgument:
+        except commands.BadArgument:
             pass
 
-        raise BadArgument(f'mention for "{argument}" could not be created')
+        raise commands.BadArgument(f'mention for "{argument}" could not be created')
 
 
 def getenv_list(key: str) -> list:
