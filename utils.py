@@ -81,6 +81,4 @@ def getenv_list(key: str) -> list:
 
 
 def getenv_bool(key: str) -> bool:
-    if getenv(key).lower() in FALSEY_VALUES:
-        return False
-    return True
+    return getenv(key).lower() not in FALSEY_VALUES
