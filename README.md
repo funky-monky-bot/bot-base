@@ -2,17 +2,12 @@
 
 > OOOO AAAA OOOO AAAA
 
-Funky Monky is a public and open-source discord bot written in [discord.py](https://github.com/Rapptz/discord.py/) focusing on fun and largely unique features. The design philosophy for Funky Monky is the following:
-
-- Write unique features (or at least unique spins on existing ones)
-- Write good documentation for developers and end-users alike
-- Code such that, where possible, end-users will have to refer to the documentation minimally
+This repo is for a fully-functioning but purpose-neutral discord bot, designed to be extended. It is written in [discord.py](https://github.com/Rapptz/discord.py/). This bot is used as a base for all public bots made by Funky Monky Development.
 
 It is distributed under the [GNU Affero General Public License v3.0 (GNU AGPLv3)](LICENSE) (see [below](#license))
 
 ### See also
 
-- The [repo for the web dashboard (Coming Soon)](https://github.com/funky-monky-bot/site)
 - The [discord.py documentation](https://discordpy.readthedocs.io/)
 - The [pipenv documentation](https://pipenv.pypa.io/) (used to handle the dependencies of the project)
 - The [jishaku documentation](https://jishaku.readthedocs.io/) (a library used by the bot mainly as an extension for debug and diagnostic purposes)
@@ -65,6 +60,6 @@ pre-commit install
 
 ## License
 
-This bot is licensed under the GNU Affero General Public License v3.0 (GNU AGPLv3). For full legalese see the [license file](LICENSE), or alternatively see the [tl;drLegal page](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0))
+This bot is licensed under the GNU Affero General Public License v3.0 (GNU AGPLv3). For full legalese see the [license file](LICENSE), or alternatively see the [tl;drLegal page](<https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)>)
 
 The important thing to note is that if you are self-hosting the software and making absolutely no changes to the source code (editing the .env files is obviously fine), you are legally safe. However, **if you change the bot's source code, you must open-source your version under the same license. In this case, you must also state all changes you have made publicly.** For more information, read up about the license through one of the aforementioned sources.
