@@ -46,6 +46,12 @@ if __name__ == "__main__":
     bot.configure_env()
     configure_logging()
 
+    if not getenv("BOT_TOKEN"):
+        logging.critical(
+            "You must specify a bot token to connect to discord with (see secret.env.example)"
+        )
+        sys.exit(1)
+
     loop = asyncio.get_event_loop()
     logging.info("Initialising...")
     try:
