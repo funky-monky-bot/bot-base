@@ -58,7 +58,9 @@ if __name__ == "__main__":
         loop.run_until_complete(setup(bot))  # Setup bot
 
         # Run bot forever
-        loop.create_task(bot.start(getenv("BOT_TOKEN")))
+        start_task = loop.create_task(bot.start(getenv("BOT_TOKEN")))
+        start_task.add_done_callback(task_done_callback)
+
         loop.run_forever()
     except KeyboardInterrupt:
         logging.debug("KeyboardInterrupt")  # Probably raised by Ctrl+C at terminal
