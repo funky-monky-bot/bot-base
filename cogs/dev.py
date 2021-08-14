@@ -47,7 +47,7 @@ class DevCog(commands.Cog, name="Developer Tools"):
     ):
         """
         Repeats the passed-in text, which is everything after the command name and
-        optional mention
+        optional mention. Also mimics the reply (if any) of the triggering message.
 
         TODO: Add explanation of mention processing logic somewhere end-users can view
         it (not prioritised as currently only used by this dev-only command)
@@ -60,7 +60,7 @@ class DevCog(commands.Cog, name="Developer Tools"):
         except discord.Forbidden:
             pass
 
-        await ctx.send(text)
+        await ctx.send(text, reference=ctx.message.reference)
 
 
 def setup(bot: Bot) -> None:
