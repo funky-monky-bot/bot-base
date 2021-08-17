@@ -9,6 +9,7 @@ from discord.ext import commands
 
 from logger import configure_logging
 from bot import Bot
+from utils import getenv_bool
 
 
 def prefix(bot: Bot, message: discord.Message) -> list:
@@ -27,7 +28,8 @@ async def setup(bot: commands.Bot):
                 logging.debug(f"cog extension {filename[0:-3]} loaded successfully")
             except commands.ExtensionError as e:
                 logging.error(e)
-    bot.load_extension("jishaku")
+    if getenv_bool("JSK_ENABLED"):
+        bot.load_extension("jishaku")
 
 
 def task_done_callback(task: asyncio.Task) -> None:
