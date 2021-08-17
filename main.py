@@ -19,11 +19,6 @@ def prefix(bot: Bot, message: discord.Message) -> list:
     return bot.default_prefix
 
 
-def done_callback(task: asyncio.Task):
-    if task.exception():
-        task.print_stack()
-
-
 async def setup(bot: commands.Bot):
     for filename in listdir(path.join(path.dirname(path.realpath(__file__)), "cogs")):
         if filename.endswith(".py"):
