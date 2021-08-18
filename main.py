@@ -4,9 +4,12 @@ import logging
 import asyncio
 import re
 
+from tortoise import Tortoise
+
 import discord
 from discord.ext import commands
 
+import models
 from logger import configure_logging
 from bot import Bot
 from utils import getenv_bool
@@ -21,6 +24,13 @@ def prefix(bot: Bot, message: discord.Message) -> list:
 
 
 async def setup(bot: commands.Bot):
+    # Connect to DB
+    if getenv_bool("DB_ENABLED"):
+        await Tortoise.init(
+            db_url=getenv("DB_URL"), modules={"models": [models.__name__]}
+        )
+
+    # Load extension cogs
     for filename in listdir(path.join(path.dirname(path.realpath(__file__)), "cogs")):
         if filename.endswith(".py"):
             try:
@@ -65,6 +75,7 @@ if __name__ == "__main__":
         logging.debug("Logging out from discord")
         loop.run_until_complete(bot.close())
         logging.info("Logged out from discord")
+    loop.run_until_complete(Tortoise.close_connections())
     logging.debug("Shutting down asynchronous generators to close loop")
     loop.run_until_complete(loop.shutdown_asyncgens())
     logging.info("Terminating program")

@@ -12,6 +12,8 @@ black = "*"
 python-dotenv = "*"
 colorama = "*"
 jishaku = "*"
+tortoise-orm = "*"
+asyncpg = "*"
 
 [requires]
 python_version = "3.8"
