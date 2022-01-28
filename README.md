@@ -12,6 +12,15 @@ It is distributed under the [GNU Affero General Public License v3.0 (GNU AGPLv3)
 - The [pipenv documentation](https://pipenv.pypa.io/) (used to handle the dependencies of the project)
 - The [jishaku documentation](https://jishaku.readthedocs.io/) (a library used by the bot mainly as an extension for debug and diagnostic purposes)
 
+## Contents
+
+- [Installation for self-hosting](#installation-for-self-hosting)
+  - [Configuration System](#configuration-system)
+  - [Step-by-Step Installation](#step-by-step-installation)
+    - [If you're looking to fork/expand/change the source code of the bot](#if-youre-looking-to-forkexpandchange-the-source-code-of-the-bot)
+- [Legacy Branch](#legacy-branch)
+- [License](#license)
+
 ## Installation for self-hosting
 
 **Be sure to read [about the license](#license)**
@@ -20,7 +29,7 @@ It is distributed under the [GNU Affero General Public License v3.0 (GNU AGPLv3)
 
 The bot makes use of two (technically optional) configuration files: `shared.env` and `secret.env`. Both of these files' values are simply treated as environment variables and added to the bot's environment during runtime. Moreover, you can override any configuration value simply by specifying an environment variable in your system of the exact same name. It is worth noting that there is a command included in the bot (only usable by bot owners, of course) that allows the reloading of the env files. In this case (and when the bot is initially started), the following order of precedence is taken: First, the variables in secret.env are added. Next, the variables in shared.env are added (overwriting those from secret.env). Finally, the actual environment variables in the system environment when the bot was run are added (overwriting those from both shared.env and secret.env).
 
-### Step-by-Step installation
+### Step-by-Step Installation
 
 This guide assumes you have python 3.8 (and git) installed and this repository cloned. It also assumes that all commands you run are run within your cloned copy of this repository
 
@@ -57,6 +66,10 @@ pre-commit install
 ```
 
 3. Be absolutely sure to check out [CONTRIBUTING.md **(coming soon)**](CONTRIBUTING.md) and the [License section](#license) below
+
+## Legacy Branch
+
+You may notice a branch of this repository entitled `legacy`, as of 28/01/2022 this branch is no longer being maintained, and is simply an out-of-date variant of the `main` branch. It is left purely to show when the project switched from discord.py to disnake, as this was a relatively large overhaul. The primary reason for the switch was related to discord.py stopping maintenance and development, the details and reasoning of which are outlined by the project's creator, [here](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1).
 
 ## License
 
