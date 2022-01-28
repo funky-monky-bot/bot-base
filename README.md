@@ -35,35 +35,37 @@ This guide assumes you have python 3.8 (and git) installed and this repository c
 
 1. Install pipenv with pip (if not already installed):
 
-```bash
-pip install pipenv
-```
+   ```bash
+   pip install pipenv
+   ```
 
 2. Install the project dependencies with pipenv
 
-```bash
-pipenv install
-```
+   ```bash
+   pipenv install
+   ```
 
 3. That's it, **provided you aren't expanding the bot**. Now run the bot with
 
-```bash
-pipenv run python main.py
-```
+   ```bash
+   pipenv run python main.py
+   ```
 
 #### If you're looking to fork/expand/change the source code of the bot
 
 1. Install the dev dependencies too!
 
-```bash
-pipenv install --dev
-```
+   ```bash
+   pipenv install --dev
+   ```
 
 2. Make sure to install the pre-commit hooks (pre-commit should be installed as part of the dev dependencies)!
 
-```bash
-pre-commit install
-```
+   ```bash
+   pipenv run pre-commit install
+   ```
+
+   Should you want to be able to run pre-commit commands without prepending `pipenv run`, install pre-commit globally (`pip install pre-commit`) and ensure that your python `Scripts` directory is on your system PATH.
 
 3. Be absolutely sure to check out [CONTRIBUTING.md **(coming soon)**](CONTRIBUTING.md) and the [License section](#license) below
 
