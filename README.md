@@ -1,5 +1,7 @@
 # FUNKY MONKY
 
+**THIS REPO IS NOW ARCHIVED, THE SUCCESSOR TO THIS PROJECT IS LOCATED [HERE](https://github.com/funky-monky-bot/base).**
+
 > OOOO AAAA OOOO AAAA
 
 This repo is for a fully-functioning but purpose-neutral discord bot, designed to be extended. It is written in [discord.py](https://github.com/Rapptz/discord.py/). This bot is used as a base for all public bots made by Funky Monky Development.
@@ -18,7 +20,6 @@ It is distributed under the [GNU Affero General Public License v3.0 (GNU AGPLv3)
   - [Configuration System](#configuration-system)
   - [Step-by-Step Installation](#step-by-step-installation)
     - [If you're looking to fork/expand/change the source code of the bot](#if-youre-looking-to-forkexpandchange-the-source-code-of-the-bot)
-- [Legacy Branch](#legacy-branch)
 - [License](#license)
 
 ## Installation for self-hosting
@@ -68,10 +69,6 @@ This guide assumes you have python 3.8 (and git) installed and this repository c
    Should you want to be able to run pre-commit commands without prepending `pipenv run`, install pre-commit globally (`pip install pre-commit`) and ensure that your python `Scripts` directory is on your system PATH.
 
 3. Be absolutely sure to check out [CONTRIBUTING.md **(coming soon)**](CONTRIBUTING.md) and the [License section](#license) below
-
-## Legacy Branch
-
-You may notice a branch of this repository entitled `legacy`, as of 28/01/2022 this branch is no longer being maintained, and is simply an out-of-date variant of the `main` branch. It is left purely to show when the project switched from discord.py to disnake, as this was a relatively large overhaul. The primary reason for the switch was related to discord.py stopping maintenance and development, the details and reasoning of which are outlined by the project's creator, [here](https://gist.github.com/Rapptz/4a2f62751b9600a31a0d3c78100287f1).
 
 ## License
 
